@@ -268,7 +268,7 @@ namespace engine
             // projectionMatrix[3][3] = 0.0f;
             // projectionMatrix[3][2] = 1.0f;
 
-            Log.info("modelMatrix: {0}; viewMatrix: {1}; projectionMatrix: {2}", modelMatrix, viewMatrix, projectionMatrix);
+            // Log.info("modelMatrix: {0}; viewMatrix: {1}; projectionMatrix: {2}", modelMatrix, viewMatrix, projectionMatrix);
 
 
             _shaderProgram->uniformSet("modelMatrix", modelMatrix);

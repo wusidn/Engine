@@ -4,7 +4,6 @@
 
 #include "Object.h"
 #include <iostream>
-#include <uuid/uuid.h>
 #include <string>
 
 using namespace std;
@@ -24,12 +23,11 @@ namespace engine
 
             friend ostream & operator<<(ostream & _out, const Uuid & _uuid);
         protected:
-            Uuid(){}
+            Uuid();
             virtual const bool init(void);
             virtual const bool init(const Uuid & _uuid);
         private:
-            uuid_t data;
-
+            unsigned short _data[16];
         };
     }
 }

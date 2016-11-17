@@ -44,7 +44,7 @@ IF(WIN32)
 ELSEIF(APPLE)
     TARGET_LINK_LIBRARIES(${PROJECT_NAME} glfw3 glad)
 ELSEIF(UNIX)
-    TARGET_LINK_LIBRARIES(${PROJECT_NAME} GL glfw3 glad uuid pthread dl X11 Xi Xrandr Xxf86vm Xcursor Xinerama)
+    TARGET_LINK_LIBRARIES(${PROJECT_NAME} GL glfw3 glad pthread dl X11 Xi Xrandr Xxf86vm Xcursor Xinerama)
 ENDIF()
 
 #拷贝资源

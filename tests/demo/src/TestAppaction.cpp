@@ -11,6 +11,8 @@
 #include "Matrix2.h"
 #include "Matrix3.h"
 
+#include "Uuid.h"
+
 #include <iostream>
 #include <cmath>
 
