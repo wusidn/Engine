@@ -90,7 +90,7 @@ namespace engine
 
                 if(shaderFilePath.size() <= 0)
                 {
-                    string tempPath = Appaction::appactionPath() + "Shader/" + fileName;
+                    string tempPath = Appaction::appactionPath() + "shader/" + fileName;
                     shaderFilePath = File::pathIsExists(tempPath) ? tempPath : "";
                 }
 
@@ -251,13 +251,13 @@ namespace engine
 
         string Shader::vertexShaderCode(void)
         {
-            static string result = File::readAllText(Appaction::appactionPath() + "Shader/template.vert");
+            static string result = File::readAllText(Appaction::appactionPath() + "shader/template.vert");
             return result;
         }
 
         string Shader::fragmentShaderCode(void)
         {
-            static string result = File::readAllText(Appaction::appactionPath() + "Shader/template.frag");
+            static string result = File::readAllText(Appaction::appactionPath() + "shader/template.frag");
             return result;
         }
     }
