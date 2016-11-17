@@ -12,6 +12,11 @@ namespace engine
         _accumulativeScale = Vec3(1.0f);
     }
 
+    Node::~Node(void)
+    {
+        
+    }
+
     const bool Node::init(void)
     {
         if(!Object::init()){ return false; }

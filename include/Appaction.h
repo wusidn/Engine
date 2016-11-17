@@ -41,11 +41,8 @@ namespace engine
 
         virtual ~Appaction(void);
     private:
-        // CREATEFUNC(Appaction);
 
-        static string _appactionPath;
-        // static Appaction * _instance;
-        
+        static string _appactionPath;        
     };
 }
 

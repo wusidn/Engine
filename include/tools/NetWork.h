@@ -58,19 +58,20 @@ namespace engine
             const bool send(const int client, const string & str) const;
 
         protected:
-            NetWork(){}
+            NetWork(void);
+            virtual ~NetWork(void);
             virtual const bool init(const int type = SOCK_STREAM);
 
             int socket_id;
             map<const int, struct sockaddr_in *> clientList;
         private:
                     
-            bool running = false;
+            bool running;
             
-            function<void (const int client, const struct sockaddr_in & clientInfo)> acceptCallBack = nullptr;
-            function<void (const int client)> closeCallBack = nullptr;
-            function<void (const int client, const string & str)> recvCallBack = nullptr;
-            function<void (const struct sockaddr_in * clientInfo, const string & str)> recvFromCallBack = nullptr;
+            function<void (const int client, const struct sockaddr_in & clientInfo)> acceptCallBack;
+            function<void (const int client)> closeCallBack;
+            function<void (const int client, const string & str)> recvCallBack;
+            function<void (const struct sockaddr_in * clientInfo, const string & str)> recvFromCallBack;
 
         };
     }

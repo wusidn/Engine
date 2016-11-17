@@ -26,8 +26,8 @@ namespace engine
         void remove(Node & child);
         
     protected:
-        World(){}
-        ~World();
+        World(void);
+        ~World(void);
         virtual const bool init();
         
         Node * _root;

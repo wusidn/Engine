@@ -22,7 +22,7 @@ namespace engine
     protected:
         virtual const bool init(void);
         virtual const bool init(const string & path);
-        Image(){}
+        Image(void);
         virtual ~Image(void);
     private:
         CREATEFUNC(Image);

@@ -72,8 +72,17 @@ namespace engine
         return _data;
     }
 
+    Image::Image(void)
+    {
+        _data = nullptr;
+    }
+
     Image::~Image(void)
     {
-        // if(_data) stbi_image_free(_data);
+        if(_data)
+        {
+            //stbi_image_free(_data);
+            _data = nullptr;
+        }
     }
 }

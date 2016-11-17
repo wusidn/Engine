@@ -270,6 +270,20 @@ namespace engine
             return result;
         }
 
+        LogManager::LogManager(void)
+        {
+            netOutPut = nullptr;
+        }
+
+        LogManager::~LogManager(void)
+        {
+            if(netOutPut)
+            {
+                netOutPut->release();
+                netOutPut = nullptr;
+            }
+        }
+
         LogManager & Log = LogManager::create();
     }
 }

@@ -38,9 +38,18 @@ namespace engine
         return root().draw(Matrix4(1.0f));
     }
 
-    ScreenWorld::~ScreenWorld()
+    ScreenWorld::ScreenWorld(void)
     {
-        _screenCamera->release();
+        _screenCamera = nullptr;
+    }
+
+    ScreenWorld::~ScreenWorld(void)
+    {
+        if(_screenCamera){
+            _screenCamera->release();
+            _screenCamera = nullptr;
+        }
+        
         _instance = nullptr;
     }
 }

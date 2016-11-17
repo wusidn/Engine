@@ -33,6 +33,7 @@ namespace engine
             virtual const bool init(void);
             virtual const bool init(const string & filePath);
             
+            File(void);
             virtual ~File(void);
             
         private:

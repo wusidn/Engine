@@ -12,13 +12,22 @@ namespace engine
         return _worldPool;
     }
 
+    World::World(void)
+    {
+        _root = nullptr;
+    }
 
-    World::~World()
+    World::~World(void)
     {
         auto index = std::find(_worldPool.begin(), _worldPool.end(), this);
         if(index != _worldPool.end())
         {
             _worldPool.erase(index);
+        }
+        if(_root)
+        {
+            _root->release();
+            _root = nullptr;
         }
     }
 

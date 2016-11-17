@@ -17,7 +17,13 @@ namespace engine
     
     void CameraOutput::camera(Camera & linkCamera)
     {
+        if(_camera)
+        {
+            _camera->release();
+            _camera = nullptr;
+        }
         _camera = &linkCamera;
+        _camera->retain();
     }
 
     const bool CameraOutput::render(const int dt)
@@ -39,5 +45,19 @@ namespace engine
 
         //拍照
         return camera().photograph();
+    }
+
+    CameraOutput::CameraOutput(void)
+    {
+        _camera = nullptr;
+    }
+
+    CameraOutput::~CameraOutput(void)
+    {
+        if(_camera)
+        {
+            _camera->release();
+            _camera = nullptr;
+        }
     }
 }

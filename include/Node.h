@@ -58,6 +58,7 @@ namespace engine
         
     protected:
         Node(void);
+        virtual ~Node(void);
         virtual const bool init(void);
 
         const Size3 accumulativeRotateOffset(void) const;

@@ -24,6 +24,9 @@ namespace engine
         virtual const bool render(const int dt);
         //绘制
         virtual const bool draw(const Matrix4 & projection);
+
+        CameraOutput(void);
+        virtual ~CameraOutput(void);
     private:
         Camera * _camera;
     };

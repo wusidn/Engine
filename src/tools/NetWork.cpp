@@ -373,5 +373,19 @@ namespace engine
 
             return true;
         }
+
+        NetWork::NetWork(void)
+        {
+            running = false;
+            acceptCallBack = nullptr;
+            closeCallBack = nullptr;
+            recvCallBack = nullptr;
+            recvFromCallBack = nullptr;
+        }
+
+        NetWork::~NetWork(void)
+        {
+            
+        }
     }
 }

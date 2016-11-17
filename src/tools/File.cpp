@@ -33,7 +33,7 @@ namespace engine
             is.close();
             
             result = string(temp);
-            delete temp;
+            delete[] temp;
 
             return result;
         }
@@ -86,6 +86,10 @@ namespace engine
         return true; 
         }
 
+        File::File(void)
+        {
+            _filePath = nullptr;
+        }
 
         File::~File(void)
         {

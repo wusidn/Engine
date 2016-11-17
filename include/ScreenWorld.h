@@ -15,7 +15,7 @@ namespace engine
 
         const Camera & screenCamera(void) const;
     protected:
-        ScreenWorld(){}
+        ScreenWorld();
         virtual ~ScreenWorld();
         virtual const bool init(void);
 

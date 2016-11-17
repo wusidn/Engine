@@ -92,7 +92,8 @@ namespace engine
             void setFilterLevel(const level _level);
             
         protected:
-            LogManager(){}
+            LogManager(void);
+            virtual ~LogManager(void);
             virtual const bool init(void);
                 
             struct placeholder
