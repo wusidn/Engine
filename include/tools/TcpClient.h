@@ -23,7 +23,7 @@ namespace engine
 
         protected:
             virtual const bool init(void);
-            virtual const bool init(const string & address, const unsigned port, const unsigned loopInterval);
+            virtual const bool initWithLocation(const string & address, const unsigned port, const unsigned loopInterval);
         private:
             CREATEFUNC(TcpClient);
         };

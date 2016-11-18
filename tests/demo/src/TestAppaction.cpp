@@ -31,6 +31,9 @@ TestAppaction & TestAppaction::instance(void)
  void TestAppaction::start(void)
  {
         ScreenWorld::instance().append(Triangle::create(Vec2(.0f, .0f), Vec2(.0f, .5f), Vec2(.5f, .0f)));
+        ScreenWorld::instance().append(Triangle::create(Vec2(.0f, .0f), Vec2(.0f, .5f), Vec2(-0.5f, .0f)));
+        ScreenWorld::instance().append(Triangle::create(Vec2(.0f, .0f), Vec2(.0f, -0.5f), Vec2(.5f, .0f)));
+        ScreenWorld::instance().append(Triangle::create(Vec2(.0f, .0f), Vec2(.0f, -0.5f), Vec2(-0.5f, .0f)));
         // ScreenWorld::instance().append(Rectangle::create(50.0f));
 
 		// Circle & fristCircle = Circle::create(1000.0f);

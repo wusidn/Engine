@@ -18,7 +18,7 @@ namespace engine
 {
     namespace tools
     {
-        const bool NetWork::init(const int type)
+        const bool NetWork::initWithSocketType(const int type)
         {
             if(!Object::init()){ return false; }
 

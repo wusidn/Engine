@@ -17,7 +17,7 @@ namespace engine
         UdpServer & UdpServer::create(const string & address, const unsigned port, const unsigned loopInterval)
         {
             UdpServer * result = new UdpServer();
-            if(!result->init(address, port, loopInterval))
+            if(!result->initWithLocation(address, port, loopInterval))
             {
                 delete result;
                 result = nullptr;
@@ -26,9 +26,9 @@ namespace engine
             return *result;
         }
 
-        const bool UdpServer::init(const string & address, const unsigned port, const unsigned loopInterval)
+        const bool UdpServer::initWithLocation(const string & address, const unsigned port, const unsigned loopInterval)
         {
-            if(!NetWork::init(SOCK_DGRAM)){ return false; }
+            if(!NetWork::initWithSocketType(SOCK_DGRAM)){ return false; }
 
             // //开启广播特性
             int optval = 1;

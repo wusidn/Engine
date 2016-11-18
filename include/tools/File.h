@@ -24,14 +24,14 @@ namespace engine
             static const bool pathIsExists(const string & path);
 
             CREATEFUNC(File);
-            static File & createWithFilePath(const string & filePath);
+            static File & create(const string & filePath);
         
             const bool open(const int mode = ios::in | ios::out);
             const bool open(const string & filePath, const int mode = ios::in | ios::out);
             
         protected:
             virtual const bool init(void);
-            virtual const bool init(const string & filePath);
+            virtual const bool initWithFilePath(const string & filePath);
             
             File(void);
             virtual ~File(void);

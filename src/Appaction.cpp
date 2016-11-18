@@ -11,9 +11,6 @@
 #include "ShaderProgram.h"
 #include "Size2.h"
 #include "World.h"
-#include "Triangle.h"
-#include "Rectangle.h"
-#include "Circle.h"
 #include "ScreenWorld.h"
 #include "CameraOutput.h"
 
@@ -64,7 +61,7 @@ namespace engine
         glfwInit();
 
         //设置参数
-        glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+        glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -81,6 +78,8 @@ namespace engine
         glfwMakeContextCurrent(window);
         gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
         glfwSetKeyCallback(window, key_callback);
+
+        
 
         
         glClearColor(0.0, 0.0, 0.0, 1.0);

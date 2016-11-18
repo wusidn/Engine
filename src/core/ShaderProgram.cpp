@@ -16,7 +16,7 @@ namespace engine
             //* 待实现 __着色器缓存池__
 
             ShaderProgram & result = create();
-            bool shaderProgramInit = result.init(shaderList);
+            bool shaderProgramInit = result.initWithShaderList(shaderList);
 
             assert(shaderProgramInit);
 
@@ -30,7 +30,7 @@ namespace engine
             //* 待实现 __着色器缓存池__
 
             ShaderProgram & result = create();
-            bool shaderProgramInit = result.init(vShaderPath, fShaderPath);
+            bool shaderProgramInit = result.initWithShaderFile(vShaderPath, fShaderPath);
 
             assert(shaderProgramInit);
 
@@ -44,7 +44,7 @@ namespace engine
             //* 待实现 __着色器缓存池__
 
             ShaderProgram & result = create();
-            bool shaderProgramInit = result.init(vShaderFiles, fShaderFiles);
+            bool shaderProgramInit = result.initWithShadersFile(vShaderFiles, fShaderFiles);
 
             assert(shaderProgramInit);
 
@@ -56,7 +56,7 @@ namespace engine
         {
             ShaderProgram & result = create();
             
-            bool shaderProgramInit = result.init("", "");
+            bool shaderProgramInit = result.initWithShaderFile("", "");
 
             if(!shaderProgramInit){ result.initializeError(1); }
             return result; 
@@ -72,7 +72,7 @@ namespace engine
             return true;
         }
 
-        const bool ShaderProgram::init(const vector<const Shader *> & shaderList)
+        const bool ShaderProgram::initWithShaderList(const vector<const Shader *> & shaderList)
         {
             for(auto item : shaderList)
             {
@@ -88,7 +88,7 @@ namespace engine
             return true;
         }
 
-        const bool ShaderProgram::init(const string & vShaderPath, const string & fShaderPath)
+        const bool ShaderProgram::initWithShaderFile(const string & vShaderPath, const string & fShaderPath)
         {
         
             Shader & vertexShader = vShaderPath.size() <= 0 ? Shader::create(ShaderType::vertex) : Shader::create(vShaderPath, ShaderType::vertex);
@@ -106,7 +106,7 @@ namespace engine
             return true;
         }
 
-        const bool ShaderProgram::init(const vector<string> & vShaderFiles, const vector<string> & fShaderFiles)
+        const bool ShaderProgram::initWithShadersFile(const vector<string> & vShaderFiles, const vector<string> & fShaderFiles)
         {
             Shader & vertexShader = vShaderFiles.size() <= 0 ? Shader::create(ShaderType::vertex) : Shader::create(vShaderFiles, ShaderType::vertex);
             if(!vertexShader.compile()){ return false; }

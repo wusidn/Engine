@@ -60,7 +60,7 @@ namespace engine
         protected:
             NetWork(void);
             virtual ~NetWork(void);
-            virtual const bool init(const int type = SOCK_STREAM);
+            virtual const bool initWithSocketType(const int type = SOCK_STREAM);
 
             int socket_id;
             map<const int, struct sockaddr_in *> clientList;

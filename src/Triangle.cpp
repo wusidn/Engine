@@ -31,7 +31,7 @@ namespace engine
 
         Materia & materia = Materia::create();
 
-        ColorRGBA tempColors[3] = {ColorRGBA(.2f, 1.0f, .4f, 1.0f), ColorRGBA(.2f, 1.0f, .4f, 1.0f), ColorRGBA(.2f, 1.0f, .4f, 1.0f)};
+        // ColorRGBA tempColors[3] = {ColorRGBA(.2f, 1.0f, .4f, 1.0f), ColorRGBA(.2f, 1.0f, .4f, 1.0f), ColorRGBA(.2f, 1.0f, .4f, 1.0f)};
         // materia.colors(tempColors, sizeof(tempColors) / sizeof(ColorRGBA));
         materia.color(ColorRGBA(1.0f, 0.0f, 0.0f, 1.0f));
 

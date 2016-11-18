@@ -16,7 +16,7 @@ namespace engine
             const bool send(const string & str) const;
         protected:
             
-            const bool init(const string & address, const unsigned port);
+            const bool initWithLocation(const string & address, const unsigned port);
 
         private:
             struct sockaddr_in sendToAddr;

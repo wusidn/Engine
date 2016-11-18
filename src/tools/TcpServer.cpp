@@ -19,7 +19,7 @@ namespace engine
 
         const bool TcpServer::init(void)
         {
-            if(!NetWork::init()){ return false; }
+            if(!NetWork::initWithSocketType()){ return false; }
 
             return true;
         }

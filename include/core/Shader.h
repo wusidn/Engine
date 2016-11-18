@@ -45,9 +45,9 @@ namespace engine
             Shader(void);
             virtual ~Shader(void);
             virtual const bool init(void);
-            virtual const bool init(const enum ShaderType type);
+            virtual const bool initWithType(const enum ShaderType type);
             // virtual const bool init(const string & fileName, const enum ShaderType type);
-            virtual const bool init(const vector<string> & shaderFiles, const enum ShaderType type);
+            virtual const bool initWithFiles(const vector<string> & shaderFiles, const enum ShaderType type);
             
         private:
             GLuint _shaderId;

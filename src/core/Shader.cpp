@@ -18,7 +18,7 @@ namespace engine
         Shader & Shader::create(const enum ShaderType type)
         {
             Shader & result = create();
-            bool shaderInit = result.init(type);
+            bool shaderInit = result.initWithType(type);
 
             assert(shaderInit);
 
@@ -35,7 +35,7 @@ namespace engine
         Shader & Shader::create(const vector<string> & shaderFiles, const enum ShaderType type)
         {
             Shader & result = create();
-            bool shaderInit = result.init(shaderFiles, type);
+            bool shaderInit = result.initWithFiles(shaderFiles, type);
 
             assert(shaderInit);
 
@@ -50,7 +50,7 @@ namespace engine
             return true;
         }
 
-        const bool Shader::init(const enum ShaderType type)
+        const bool Shader::initWithType(const enum ShaderType type)
         {
 
             string source;
@@ -79,7 +79,7 @@ namespace engine
             return true;
         }
 
-        const bool Shader::init(const vector<string> & shaderFiles, const enum ShaderType type)
+        const bool Shader::initWithFiles(const vector<string> & shaderFiles, const enum ShaderType type)
         {
 
             //获取每个文件的路径

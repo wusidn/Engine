@@ -45,10 +45,10 @@ namespace engine
             return false;
         }
 
-        File & File::createWithFilePath(const string & filePath)
+        File & File::create(const string & filePath)
         {
             File & result = create();
-            bool fileInit = result.init(filePath);
+            bool fileInit = result.initWithFilePath(filePath);
 
             assert(fileInit);
 
@@ -68,7 +68,7 @@ namespace engine
             return true;
         }
 
-        const bool File::init(const string & filePath)
+        const bool File::initWithFilePath(const string & filePath)
         {
             this->_filePath = new string(filePath);
             return true;

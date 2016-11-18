@@ -19,7 +19,7 @@ namespace engine
             void recvFrom(const function<void (const struct sockaddr_in * clientInfo, const string & str)> & callBack);
 
         protected:
-            virtual const bool init(const string & address, const unsigned port, const unsigned loopInterval);
+            virtual const bool initWithLocation(const string & address, const unsigned port, const unsigned loopInterval);
             
         private:
 

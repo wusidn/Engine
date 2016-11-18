@@ -7,18 +7,18 @@ namespace engine
         TcpClient & TcpClient::create(const string & address, const unsigned port, const unsigned loopInterval)
         {
             TcpClient & result = create();
-            result.init(address, port, loopInterval);
+            result.initWithLocation(address, port, loopInterval);
             return result;
         }
 
         const bool TcpClient::init(void)
         {
-            if(!NetWork::init()){ return false; }
+            if(!NetWork::initWithSocketType()){ return false; }
             
             return true;
         }
 
-        const bool TcpClient::init(const string & address, const unsigned port, const unsigned loopInterval)
+        const bool TcpClient::initWithLocation(const string & address, const unsigned port, const unsigned loopInterval)
         {
             if(!connect(address, port, loopInterval)){ return false; }
 

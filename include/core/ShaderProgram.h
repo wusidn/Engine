@@ -52,9 +52,9 @@ namespace engine
             ShaderProgram(void);
             
             virtual const bool init(void);
-            virtual const bool init(const vector<const Shader *> & shaderList);
-            virtual const bool init(const string & vShaderPath, const string & fShaderPath);
-            virtual const bool init(const vector<string> & vShaderFiles, const vector<string> & fShaderFiles);
+            virtual const bool initWithShaderList(const vector<const Shader *> & shaderList);
+            virtual const bool initWithShaderFile(const string & vShaderPath, const string & fShaderPath);
+            virtual const bool initWithShadersFile(const vector<string> & vShaderFiles, const vector<string> & fShaderFiles);
 
             GLuint getUniformLocation(const char * name) const;
             
